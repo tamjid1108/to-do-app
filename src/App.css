@@ -7,7 +7,7 @@
 }
 
 .card-header {
-  background-color: #ff8000;
+  background-color: #cd073c;
   border-radius: 0;
 }
 
@@ -37,7 +37,7 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background-color: #ff8000;
+  background-color: #cd073c;
   color: #fff;
   font-size: 18px;
   line-height: 1;
@@ -66,23 +66,23 @@
 }
 
 .btn-orange {
-  background-color: #ff8000;
-  border-color: #ff8000;
+  background-color: #cd073c;
+  border-color: #cd073c;
 }
 
-.btn-orange:hover {
-  background-color: #ffaf5d;
+/* .btn-orange:hover {
+  background-color: #ce5dff;
   border-color: #ffaf5d;
-}
+} */
 
 .btn-close {
   color: #fff;
 }
 
 .btn-close:hover {
-  color: #ff8000;
+  color: #cd073c;
 }
 
 .bg-orange {
-  background-color: #ff8000;
+  background-color: #cd073c;
 }
