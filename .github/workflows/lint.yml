@@ -6,7 +6,19 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2
+      # Get code from repo
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      # Install NodeJS
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
         with:
-          files: src/
+          node-version: 16.x
+
+      # Run npm install
+      - run: npm ci
+
+      #Run eslint
+      - name: Code Linting
+        run: npm run lint
