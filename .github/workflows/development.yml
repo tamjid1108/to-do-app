@@ -9,9 +9,14 @@ on:
 
 # Jobs to carry out
 jobs:
-  deploy:
+  deployment:
     # Runner (OS)
     runs-on: ubuntu-latest
+
+    #specify environment
+    environment:
+      name: Development
+      url: https://toodle-do-dev.netlify.app/
 
     # Steps in job
     steps:
@@ -20,13 +25,13 @@ jobs:
         uses: actions/checkout@v1
 
       # Install NodeJS
-      - name: Use Node.js 16.14.2
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: 16.14.2
+          node-version: 16.x
 
       # Run npm install and build on our code
-      - run: npm install
+      - run: npm ci
       - run: npm run build --if-present
 
       # Deploy to Netlify using our dev secrets
@@ -34,7 +39,7 @@ jobs:
         uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         with:
           args: deploy --dir=build --prod
-          secrets: '["NETLIFY_AUTH_TOKEN", "DEV_NETLIFY_SITE_ID"]'
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
