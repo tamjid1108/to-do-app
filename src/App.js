@@ -36,6 +36,7 @@ function TodoList() {
                 <div className="form-group m-3">
                   <div className="input-group">
                     <input
+                      autoComplete="off"
                       type="text"
                       className="form-control"
                       id="task"
