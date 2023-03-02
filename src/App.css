@@ -1,3 +1,7 @@
+:root {
+  --maincolor: #1e90ff;
+}
+
 .card {
   border: none;
   margin: 20px;
@@ -7,7 +11,7 @@
 }
 
 .card-header {
-  background-color: #cd073c;
+  background-color: var(--maincolor);
   border-radius: 0;
 }
 
@@ -37,7 +41,7 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background-color: #cd073c;
+  background-color: var(--maincolor);
   color: #fff;
   font-size: 18px;
   line-height: 1;
@@ -66,8 +70,8 @@
 }
 
 .btn-orange {
-  background-color: #cd073c;
-  border-color: #cd073c;
+  background-color: var(--maincolor);
+  border-color: var(--maincolor);
 }
 
 /* .btn-orange:hover {
@@ -80,9 +84,9 @@
 }
 
 .btn-close:hover {
-  color: #cd073c;
+  color: var(--maincolor);
 }
 
 .bg-orange {
-  background-color: #cd073c;
+  background-color: var(--maincolor);
 }
